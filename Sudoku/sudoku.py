@@ -1,7 +1,10 @@
-import keyboard
+#import keyboard
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
 import time
 import _thread
+
+from pynput.keyboard import Key, Controller
+keyboard = Controller()
 
 BOARDLENGTH = 9
 MARGIN = 20  # Pixels around the board
@@ -300,9 +303,9 @@ class SudokuGame:
         yIdx = b
         ruleBreak = False
         while xIdx < 9 and yIdx < 9:
-            if keyboard.is_pressed("q"):
-                printBoard()
-                break
+            #if keyboard.pressed("q"):
+                #printBoard()
+            #    break
             if not given[xIdx][yIdx]:
                 # do while in python
                 while True:
